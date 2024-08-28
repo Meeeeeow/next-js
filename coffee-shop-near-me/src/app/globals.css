@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: url("/static/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #373b64;
+  height: 100%;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: red;
+}
+@layer components {
+  /*banner styles */
+  .heading {
+    @apply tracking-tight font-extrabold text-black text-5xl md:text-6xl lg:text-7xl lg:ml-0 lg:mr-0;
+  }
+  .subtitles {
+    @apply mt-3 text-2xl text-white-100 sm:mt-5 sm:max-w-xl md:mt-5 lg:ml-0 lg:mr-0;
+  }
+  .custom-button {
+    @apply bg-purple-dark cursor-pointer text-white outline-0 border pt-4 pb-4 pl-10 pr-10 text-lg rounded-lg shadow-lg shadow-gray-600 hover:bg-purple hover:shadow-gray-700;
+  }
+}
